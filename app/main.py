@@ -7,12 +7,12 @@ app = FastAPI()
 def read_root():
     return {"Hello": "World"}
 
-@app.get("/callname/{name}")
-def read_name(name: str = None):
+@app.post("/callname")
+def post_name(name: str = None):
     return {"hello": name}
 
-@app.post("/callname/")
-def post_name(name: str = None):
+@app.get("/callname/{name}")
+def read_name(name: str = None):
     return {"hello": name}
 
 handler = Mangum(app)
