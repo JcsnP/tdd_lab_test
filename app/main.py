@@ -8,7 +8,7 @@ def read_root():
     return {"Hello": "World"}
 
 @app.post("/callname")
-def post_name(name: str = Body(...):
+def post_name(name: str = Body(...)):
     if name is None:
         return {"warning": "name is None"}
     return {"hello": name}
