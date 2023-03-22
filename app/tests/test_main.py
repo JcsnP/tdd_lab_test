@@ -16,7 +16,7 @@ def test_read_call_name():
     assert response.status_code == 200
     assert response.json() == {"Hello": name}
 
- def test_post_call_name():
+def test_post_call_name():
     name = "chitsanupong"
     response = client.post("/callname", json={'name': name})
     assert response.status_code == 200
