@@ -15,4 +15,4 @@ async def post_name(name: Request):
 def read_name(name: str = None):
     return {"hello": name}
 
-handler = Mangum(app, spec_version=2)
+handler = Mangum(app)
