@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Body
 from mangum import Mangum
 
 app = FastAPI()
@@ -8,7 +8,9 @@ def read_root():
     return {"Hello": "World"}
 
 @app.post("/callname")
-def post_name(name: str = None):
+def post_name(name: str = Body(...):
+    if name is None:
+        return {"warning": "name is None"}
     return {"hello": name}
 
 @app.get("/callname/{name}")
