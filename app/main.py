@@ -9,10 +9,10 @@ def read_root():
 
 @app.post("/callname")
 async def post_name(name: Request):
-    return {"hello": name.json()}
+    return {"Hello": name.json()}
 
 @app.get("/callname/{name}")
 def read_name(name: str = None):
-    return {"hello": name}
+    return {"Hello": name}
 
 handler = Mangum(app)
